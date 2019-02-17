@@ -1,2 +1,2 @@
 # Weather-Info-screen
-A web infos creen 
+A web info screen for Raspberry Pi 
