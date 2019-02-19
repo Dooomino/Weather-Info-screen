@@ -1,0 +1,172 @@
+body {
+	background-color: black;
+	margin: 0;
+	overflow: hidden;
+	color: white;
+	text-shadow: 2px 1px 6px black;
+}
+
+p {
+	margin: 10px;
+}
+
+/* Items */
+#mood {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, black %, #ffb56b 92%);
+	animation: mood-trans 5s cubic-bezier(.9, -0.5, .1, 1.5) infinite;
+	animation-direction: alternate;
+}
+
+.clock {
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	min-height: 10%;
+	text-align: center;
+	font-size: 2vw;
+	animation: clock-in 1s cubic-bezier(.40, .7, .5, 1) 1;
+}
+
+.clock #time {
+	word-spacing: 1vw;
+	font-size: 3vw;
+}
+
+.weather {
+	position: absolute;
+	display: flex;
+	top: 0%;
+	left: 0%;
+	width: 30%;
+	height: 20%;
+	font-size: 1.1vw;
+	text-align: center;
+	animation: weather-in 1s cubic-bezier(.40, .7, .5, 1) 1;
+	animation-delay: 0.5s;
+	animation-fill-mode: both;
+}
+
+.weather #direction {
+	font-size: 2vw;
+}
+
+.weather #last {
+	font-size: 0.8vw;
+}
+
+.weather #weatherSt {
+	font-size: 2vw;
+}
+
+.weather #nowWea {
+	font-size: 1.5vw;
+}
+
+.weather .status {
+	display: inline;
+	position: relative;
+	left: 0;
+	width: 50%;
+	min-height: 20%;
+}
+
+.weather #icon {
+	width: 50%;
+}
+
+.weather .temps {
+	display: inline;
+	position: relative;
+	width: 50%;
+	min-height: 20%;
+}
+
+.forecast {
+	position: absolute;
+	display: inline-flex;
+	background-color: rgba(0, 0, 0, 0.5);
+	bottom: 0%;
+	right: 0%;
+	width: 100%;
+	text-align: center;
+	min-height: 20%;
+	animation: forecast-in 1s cubic-bezier(.40, .7, .5, 1) 1;
+	animation-delay: 0.7s;
+	animation-fill-mode: both;
+}
+
+.foretime {
+	list-style: none;
+	position: relative;
+	float: left;
+	width: 10%;
+	height: 10%;
+}
+
+
+/* Animation */
+@keyframes mood-trans {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes weather-in {
+	0% {
+		left: 100%;
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		left: 0%;
+		opacity: 1;
+	}
+}
+
+@keyframes forecast-in {
+	0% {
+		right: 100%;
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		right: 0%;
+		opacity: 1;
+	}
+}
+
+@keyframes clock-in {
+	0% {
+		top: 50%;
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		top: 40%;
+		opacity: 1;
+	}
+}
+
+/* test */
+.ts {
+	background-color: aquamarine;
+}
