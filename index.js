@@ -15,8 +15,8 @@ app.use(cors());
 
 app.get("/", function (req, rep) {
 
-  //  var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
-  var ip = '192.197.54.31'
+  var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+  // var ip = '192.197.54.31'
   try {
     var coor = '';
     console.log(locationUrl + ip)
