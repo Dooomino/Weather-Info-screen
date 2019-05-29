@@ -1,6 +1,6 @@
 # Weather-Info-screen
 A web info screen for Raspberry Pi 
 
-Weather API Provider: [OpenWeatherMap](http://openweathermap.org)
+Weather API Provider: [DarkSky](https://darksky.net)
 
-Loaction API Provider: [OpenStreetMap](http://openstreetmap.org)
+Loaction API Provider: [IpLocate](https://www.iplocate.io)

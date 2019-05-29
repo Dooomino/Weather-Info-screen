@@ -2,83 +2,51 @@
 <html>
 
 <head>
-  <title>Today</title>
-  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="js/skycons.js"></script>
+  <script src="js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/grid.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
-  <script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
-  <div id="mood"></div>
-  <div class="clock">
-    <p id="time">00:00:00</p>
-    <p id="date">WED s</p>
-  </div>
-  <div class="weather">
-    <div class="status">
-      <p id="weatherSt">Loading</p>
-      <img id="icon" />
-
+  <div id="bg"></div>
+  <div id="main" class="row">
+    <div class="col-4">
+      <h1>Winds</h1>
     </div>
-    <div class="temps">
-      <p id="direction">Loading</p>
-      <p id="nowWea">Loading</p>
-      <p id="othWea">Loading</p>
-      <p id="last">last</p>
+    <div class="col-4 mid-center">
+      <div id="current">
+        <h1>Currently</h1>
+        <hr />
+        <h2 class="local"><span>N/a</span></h2>
+        <div class="row">
+          <canvas id="weather-icon" width="64" height="64">
+          </canvas>
+        </div>
+        <hr />
+        <div class="status">
+          <h2 class="temp"><span>N/a</span> °C</h2>
+          <h2 class="stat"><span>N/a</span></h2>
+          <h2 class="MinMax">
+            <div class="row">
+              <span class="col-6">Min</span>
+              <span class="col-6">Max</span>
+            </div>
+            <div class="row">
+              <span class="col-6"><span class="min">N/a</span> °C</span>
+              <span class="col-6"><span class="max">N/a</span> °C</span>
+            </div>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <h1>Forcast</h1>
     </div>
   </div>
-  <div class="forecast">
-    <li class="foretime">
-      <p class="foreinfo">loading</p>
-      <img class="foreicon" />
-
-    </li>
-    <li class="foretime">
-      <p class="foreinfo">loading</p>
-      <img class="foreicon" />
-
-    </li>
-    <li class="foretime">
-      <p class="foreinfo">loading</p>
-      <img class="foreicon" />
-
-    </li>
-    <li class="foretime">
-      <p class="foreinfo">loading</p>
-      <img class="foreicon" />
-
-    </li>
-    <li class="foretime">
-      <p class="foreinfo">loading</p>
-      <img class="foreicon" />
-
-    </li>
-    <li class="foretime">
-      <p class="foreinfo">loading</p>
-      <img class="foreicon" />
-
-    </li>
-    <li class="foretime">
-      <p class="foreinfo">loading</p>
-      <img class="foreicon" />
-
-    </li>
-    <li class="foretime">
-      <p class="foreinfo">loading</p>
-      <img class="foreicon" />
-
-    </li>
-    <li class="foretime">
-      <p class="foreinfo">loading</p>
-      <img class="foreicon" />
-
-    </li>
-    <li class="foretime">
-      <p class="foreinfo">loading</p>
-      <img class="foreicon" />
-
-    </li>
+  <div id="details" class="row">
   </div>
-</body>
-
-</html>
+</body></html>
+ 
