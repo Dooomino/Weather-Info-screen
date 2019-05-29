@@ -4,6 +4,8 @@ body {
   margin: 0;
   color: white;
   text-shadow: 2px 2px 2px black;
+  overflow: hidden;
+  animation: op-in 0.5s cubic-bezier(.5, .8, .6, 1) 1;
 }
 
 hr {
@@ -30,10 +32,12 @@ hr {
   width: 100%;
   height: 100%;
   filter: blur(0.5vw);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /*  background: url("/Weather/image/snow.jpg");*/
+  opacity: 0;
+}
+
+#bg.show {
+  opacity: 1;
+  animation: bg-in 5s cubic-bezier(.5, .8, .6, 1) 1;
 }
 
 #bg::after {
@@ -48,10 +52,66 @@ hr {
   text-align: justify-all;
 }
 
+.cdeg::after {
+  content: " °C";
+}
 
 #details {
   position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
   top: 70%;
   height: 30%;
   background-color: rgba(48, 48, 48, 0.21);
+}
+
+[class*="hour"] {
+  height: 50%;
+  margin: 3% 2px;
+  text-align: center;
+  text-align: justify-all;
+}
+
+.time,
+.deg {
+  margin: 0;
+}
+
+.hs {
+  animation: hours-in 0.5s cubic-bezier(.5, .8, .6, 1) 1;
+  animation-fill-mode: both;
+}
+
+
+/*Animation*/
+@keyframes op-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bg-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes hours-in {
+  from {
+    transform: translateX(100vw)
+  }
+
+  to {
+    transform: translateX(0vw)
+  }
 }

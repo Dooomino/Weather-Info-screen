@@ -17,27 +17,26 @@ app.get("/", function (req, rep) {
 
   //  var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
   var ip = '192.197.54.31'
-  console.log(ip)
   try {
     var coor = '';
+    console.log(locationUrl + ip)
     axios.get(locationUrl + ip)
       .then((resp) => resp.data)
       .then((data) => {
-        //        console.log(data)
         coor = data.latitude + "," + data.longitude
         var city = data.city
         var country = data.country
+        console.log("Position got")
+        console.log(weatherUrl + '/' + coor + wpara)
         axios.get(weatherUrl + '/' + coor + wpara)
           .then((resp) => resp.data)
           .then((data) => {
-            //            console.log(data);
             data["city"] = city;
             data["country"] = country
+            console.log("Weather got")
             rep.send(data);
           });
-
       });
-
   } catch (e) {
 
   }
