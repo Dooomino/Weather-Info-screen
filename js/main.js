@@ -13,27 +13,32 @@ var conditions = [
 
 var pullsuccess = false;
 
+var pullWeather() {
+  console.log("pulling");
+  $.get("http://localhost:8080", function (rep, status) {
+    dd = rep.daily.data
+    hd = rep.hourly.data
+
+    rep.currently.time = totime(rep.currently.time)
+    for (i = 0; i < dd.length; i++) {
+      dd[i].time = totime(dd[i].time)
+    }
+    for (i = 0; i < hd.length; i++) {
+      hd[i].time = toHour(hd[i].time)
+    }
+
+    pullsuccess = true;
+    loadCurrent(rep)
+    loadHourly(rep)
+  });
+}
+
 function getWeather() {
   pullsuccess = false;
+  pullWeather();
   var s = setInterval(() => {
     if (!pullsuccess) {
-      console.log("pulling");
-      $.get("http://localhost:8080", function (rep, status) {
-        dd = rep.daily.data
-        hd = rep.hourly.data
-
-        rep.currently.time = totime(rep.currently.time)
-        for (i = 0; i < dd.length; i++) {
-          dd[i].time = totime(dd[i].time)
-        }
-        for (i = 0; i < hd.length; i++) {
-          hd[i].time = toHour(hd[i].time)
-        }
-
-        pullsuccess = true;
-        loadCurrent(rep)
-        loadHourly(rep)
-      });
+      pullWeather();
     } else {
       clearInterval(s);
     }
