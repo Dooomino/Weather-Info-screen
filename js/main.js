@@ -13,7 +13,7 @@ var conditions = [
 
 var pullsuccess = false;
 
-var pullWeather() {
+function pullWeather() {
   console.log("pulling");
   $.get("http://localhost:8080", function (rep, status) {
     dd = rep.daily.data
