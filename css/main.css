@@ -8,6 +8,10 @@ body {
   animation: op-in 0.5s cubic-bezier(.5, .8, .6, 1) 1;
 }
 
+h2 {
+  margin: 2px;
+}
+
 hr {
   border-color: rgba(173, 173, 173, 0.48);
 }

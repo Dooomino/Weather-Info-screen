@@ -37,7 +37,7 @@ function getWeather() {
     } else {
       clearInterval(s);
     }
-  }, 2000);
+  }, 60000);
 }
 
 function test() {
@@ -66,11 +66,11 @@ function test() {
 }
 
 window.onload = function () {
-  //  getWeather()
-  //  setInterval(getWeather, 1800000)
+  getWeather()
+  setInterval(getWeather, 1800000)
   //
-  test()
-  //  setInterval(test, 10000);
+  //  test()
+  //  //  setInterval(test, 10000);
 
 }
 
